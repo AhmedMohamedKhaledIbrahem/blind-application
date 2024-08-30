@@ -1,0 +1,44 @@
+<resources>
+    <string name="app_name">Smart Glass</string>
+    <string name="EmailLogin">Email</string>
+    <string name="PasswordLogin">Password</string>
+    <string name="app_Logo">App Logo</string>
+    <string name="textLogin">Login with your Account</string>
+    <string name="welcomeTextLogin">Welcome to Glass APP</string>
+    <string name="LoginButton">Login</string>
+    <string name="OrContinueWith">Or Continue with</string>
+    <string name="GoogleIcon">Google</string>
+    <string name="ForgetPassword">ForgetPassword?</string>
+    <string name="JoinNow">don\'t have account?join now</string>
+    <string name="FullName">FullName</string>
+    <string name="UserName">UserName</string>
+    <string name="EmailSign">Email</string>
+    <string name="PhoneNumber">Phone Number</string>
+    <string name="PasswordSignUp">Password</string>
+    <string name="ConfirmPassword">Confirm Password</string>
+    <string name="CreateAnAccount">Create an account</string>
+    <string name="SignUpButton">SignUp</string>
+    <string name="LogIn">Already have an account?Log In</string>
+    <string name="title_activity_sign_up">SignUpActivity</string>
+    <string name="Setting">Setting</string>
+    <string name="ParentalControl">Parental Control</string>
+    <string name="EmergencyLogo">Emergency Plan</string>
+    <string name="LogoutLogo">LogOut</string>
+    <string name="EmergencyPlan">Emergency Plan</string>
+    <string name="EmergencyPlanContact">EmergencyPlanContact</string>
+    <string name="AddContact">Add</string>
+    <string name="SettingsIcon">Settings</string>
+    <string name="PhotoCamera">PhotoCamera</string>
+    <string name="NoPhoto">There are no photos yet</string>
+    <string name="Email">Email</string>
+    <string name="Otp">OTP</string>
+    <string name="NewPasswordChange">New Password</string>
+    <string name="ChangePassword">Change Password</string>
+    <string name="ForgetPasswordView">Forget Password</string>
+    <string name="SendOTPAGIAN">Send Otp Again</string>
+    <string name="webClientID">688450515610-ol5nn87usjpl5tri8rkh49t02i6n710g.apps.googleusercontent.com</string>
+    <string name="no_Internet_Connection">No Internet Connection</string>
+    <string name="ipTest">IP Value</string>
+
+
+</resources>
