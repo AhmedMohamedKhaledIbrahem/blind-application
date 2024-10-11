@@ -3,7 +3,7 @@ package com.example.smartglass.data
 import com.google.ai.client.generativeai.GenerativeModel
 
 class GeminiApiClient {
-    private val key ="AIzaSyAaBScGRil-qRVtvkdjmU_XFa4vVjD0egw"
+    private val key =/*todo your key GeminiApi*/
     private val generativeModel = GenerativeModel(
         modelName = "gemini-1.5-flash",
         apiKey = key
