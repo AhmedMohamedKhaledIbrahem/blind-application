@@ -4,7 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
-object KeyDownEventViewModel : ViewModel() {
+class KeyDownEventViewModel : ViewModel() {
     private var _dataLiveData = MutableLiveData<String>()
 
 

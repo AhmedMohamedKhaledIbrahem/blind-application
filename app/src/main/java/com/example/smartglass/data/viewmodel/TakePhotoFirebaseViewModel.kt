@@ -4,7 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
-object TakePhotoFirebaseViewModel :ViewModel() {
+class TakePhotoFirebaseViewModel :ViewModel() {
     private val _dataLiveData = MutableLiveData<String>()
 
 

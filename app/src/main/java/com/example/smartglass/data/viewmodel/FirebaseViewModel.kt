@@ -127,7 +127,7 @@ class FirebaseViewModel @Inject constructor(
             }
 
             override fun onCancelled(p0: DatabaseError) {
-                TODO("Not yet implemented")
+                Log.e("onCancelld",p0.message)
             }
         })
     }
@@ -174,7 +174,7 @@ class FirebaseViewModel @Inject constructor(
                     }
 
                     override fun onCancelled(p0: DatabaseError) {
-                        TODO("Not yet implemented")
+                        Log.e("onCancelld",p0.message)
                     }
                 })
 
@@ -198,7 +198,7 @@ class FirebaseViewModel @Inject constructor(
                     }
 
                     override fun onCancelled(dataSnapshot: DatabaseError) {
-                        TODO("Not yet implemented")
+                        Log.e("onCancelld",dataSnapshot.message)
                     }
 
                 })
@@ -262,7 +262,7 @@ class FirebaseViewModel @Inject constructor(
                 }
 
                 override fun onCancelled(p0: DatabaseError) {
-                    TODO("Not yet implemented")
+                    Log.e("onCancelld",p0.message)
                 }
 
             })
@@ -306,7 +306,7 @@ class FirebaseViewModel @Inject constructor(
                 }
 
                 override fun onCancelled(dataSnapshot: DatabaseError) {
-                    TODO("Not yet implemented")
+                    Log.e("onCancelld",dataSnapshot.message)
                 }
 
             }
@@ -336,7 +336,8 @@ class FirebaseViewModel @Inject constructor(
                 }
 
                 override fun onCancelled(p0: DatabaseError) {
-                    TODO("Not yet implemented")
+                    Log.e("onCanceld",p0
+                        .message)
                 }
 
             })
@@ -358,7 +359,7 @@ class FirebaseViewModel @Inject constructor(
                 }
 
                 override fun onCancelled(p0: DatabaseError) {
-                    TODO("Not yet implemented")
+                    Log.e("onCancelld",p0.message)
                 }
 
             })
@@ -396,7 +397,7 @@ class FirebaseViewModel @Inject constructor(
                             }
 
                             override fun onCancelled(p0: DatabaseError) {
-                                TODO("Not yet implemented")
+                                Log.e("onCancelld",p0.message)
                             }
 
                         })
@@ -448,7 +449,7 @@ class FirebaseViewModel @Inject constructor(
             }
 
             override fun onCancelled(snapshot: DatabaseError) {
-                TODO("Not yet implemented")
+                Log.e("onCancelld",snapshot.message)
             }
         })
 

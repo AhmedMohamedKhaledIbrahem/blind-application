@@ -25,6 +25,7 @@ class VoiceRecognitionService : Service() {
     private var isListening = true
     private var recognizerIntent: Intent? = null
     private lateinit var speechRecognizer: SpeechRecognizer
+    val viewModel = ViewModelProvider(ActivityUtils.appCompatActivity!!)[VoiceCommandViewModel::class.java]
     override fun onBind(intent: Intent?): IBinder? {
         return null
     }
@@ -120,7 +121,7 @@ class VoiceRecognitionService : Service() {
     }
 
     private fun assistCommand(matches: ArrayList<String>) {
-        val viewModel = VoiceCommandViewModel
+       // val viewModel = VoiceCommandViewModel
         viewModel.updateData(matches[0])
         Toast.makeText(
             this@VoiceRecognitionService,
@@ -130,7 +131,7 @@ class VoiceRecognitionService : Service() {
     }
 
     private fun summaryCommand(matches: ArrayList<String>) {
-        val viewModel = VoiceCommandViewModel
+        //val viewModel = VoiceCommandViewModel
         viewModel.updateData(matches[0])
         Toast.makeText(
             this@VoiceRecognitionService,
@@ -140,7 +141,7 @@ class VoiceRecognitionService : Service() {
     }
 
     private fun findCommand(matches: ArrayList<String>) {
-        val viewModel = VoiceCommandViewModel
+       // val viewModel = VoiceCommandViewModel
         viewModel.updateData(matches[0])
         Toast.makeText(
             this@VoiceRecognitionService,
@@ -150,7 +151,7 @@ class VoiceRecognitionService : Service() {
     }
 
     private fun readCommand(matches: ArrayList<String>) {
-        val viewModel = VoiceCommandViewModel
+       // val viewModel = VoiceCommandViewModel
         viewModel.updateData(matches[0])
         Toast.makeText(
             this@VoiceRecognitionService,
@@ -160,7 +161,7 @@ class VoiceRecognitionService : Service() {
     }
 
     private fun describeCommand(matches: ArrayList<String>) {
-        val viewModel = VoiceCommandViewModel
+        //val viewModel = VoiceCommandViewModel
         viewModel.updateData(matches[0])
         Toast.makeText(
             this@VoiceRecognitionService,
@@ -170,7 +171,7 @@ class VoiceRecognitionService : Service() {
     }
 
     private fun faceReconnection(matches: ArrayList<String>) {
-        val viewModel = VoiceCommandViewModel
+       // val viewModel = VoiceCommandViewModel
         viewModel.updateData(matches[0])
         Toast.makeText(
             this@VoiceRecognitionService,
@@ -180,7 +181,7 @@ class VoiceRecognitionService : Service() {
     }
 
     private fun moneyCommand(matches: ArrayList<String>) {
-        val viewModel = VoiceCommandViewModel
+      //  val viewModel = VoiceCommandViewModel
         viewModel.updateData(matches[0])
         Toast.makeText(
             this@VoiceRecognitionService,
@@ -190,7 +191,7 @@ class VoiceRecognitionService : Service() {
     }
 
     private fun detectCommand(matches: ArrayList<String>) {
-        val viewModel = VoiceCommandViewModel
+      //  val viewModel = VoiceCommandViewModel
         viewModel.updateData(matches[0])
         Toast.makeText(
             this@VoiceRecognitionService,

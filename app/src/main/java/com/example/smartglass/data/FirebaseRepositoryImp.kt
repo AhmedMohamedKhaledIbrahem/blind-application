@@ -107,9 +107,9 @@ class FirebaseRepositoryImp(private  val application: Application) : FirebaseRep
     }
 
     fun messageSender() {
-        val viewModel = TakePhotoFirebaseViewModel
-        val vModel = FireStorageViewModel
-        val fireStorageViewModel = ViewModelProvider(ActivityUtils.appCompatActivity!!)[vModel.javaClass]
+        val viewModel = ViewModelProvider(ActivityUtils.appCompatActivity!!)[TakePhotoFirebaseViewModel::class.java]
+        //val vModel = FireStorageViewModel
+        val fireStorageViewModel = ViewModelProvider(ActivityUtils.appCompatActivity!!)[FireStorageViewModel::class.java]
         val user = FirebaseAuth.getInstance().currentUser
         val userFirstPartId = user?.uid
         val blindEmail = user?.email
@@ -180,7 +180,7 @@ class FirebaseRepositoryImp(private  val application: Application) : FirebaseRep
                     }
 
                     override fun onCancelled(p0: DatabaseError) {
-                        TODO("Not yet implemented")
+                        Log.e("onCancelled",p0.message)
                     }
 
                 }

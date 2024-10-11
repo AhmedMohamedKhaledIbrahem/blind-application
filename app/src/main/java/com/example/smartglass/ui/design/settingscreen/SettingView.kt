@@ -86,7 +86,7 @@ class SettingView(
     private val imageCompose: CustomImageCompose = getCustomImageInstance()
     private var parse: String? = null
     private var serviceIntent: Intent? = null
-    var fireStorageFile = FireStorageViewModel
+    //var fireStorageFile = FireStorageViewModel
 
     @RequiresApi(Build.VERSION_CODES.O)
     @Composable

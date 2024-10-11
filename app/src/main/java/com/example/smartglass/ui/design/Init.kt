@@ -43,8 +43,8 @@ fun CheckUiColorMode2(): Color {
 
 
 @Composable
-fun getViewModelPhotoInstance(): ViewModelPhoto {
-    return viewModel<ViewModelPhoto>()
+fun CheckUiColorButtonMode(): Color {
+    return if (isSystemInDarkTheme()) BlueGray else BlueGray
 }
 
 

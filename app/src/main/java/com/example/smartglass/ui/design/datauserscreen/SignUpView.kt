@@ -71,15 +71,16 @@ class SignUpView(private val appCompatActivity: ComponentActivity, private val c
             Column(
                 Modifier
                     .fillMaxSize()
-                    .verticalScroll(rememberScrollState())
+
 
             ) {
                 LogoAndShapeAndTextIntroductionSection()
-                Spacer(modifier = Modifier.height(5.dp))
+                Spacer(modifier = Modifier.height(16.dp))
                 Column(
                     Modifier
                         .fillMaxSize()
                         .padding(horizontal = 35.dp)
+                        .verticalScroll(rememberScrollState())
                 ) {
                     SignUpTextFieldsAndButton(navController, vm, context)
 
@@ -394,7 +395,7 @@ class SignUpView(private val appCompatActivity: ComponentActivity, private val c
                 contentScale = ContentScale.FillBounds
             )
             Row(
-                modifier = Modifier.padding(top = 80.dp),
+                modifier = Modifier.padding(top = 60.dp),
                 verticalAlignment = Alignment.CenterVertically
             ) {
                 Icon(
@@ -404,15 +405,15 @@ class SignUpView(private val appCompatActivity: ComponentActivity, private val c
                     tint = CheckUiColorMode(),
                 )
                 Spacer(modifier = Modifier.width(12.dp))
-                Column {
-                    textCompose.copy(
-                        fontSize = 25,
-                        fontWeight = FontWeight.Bold,
 
-                        )
-                        .CustomizeText(text = stringResource(id = R.string.CreateAnAccount))
+                textCompose.copy(
+                    fontSize = 25,
+                    fontWeight = FontWeight.Bold,
+                ).CustomizeText(
+                        text = stringResource(id = R.string.CreateAnAccount)
+                )
 
-                }
+
             }
         }
     }

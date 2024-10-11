@@ -68,6 +68,7 @@ import com.example.smartglass.data.viewmodel.TakePhotoFirebaseViewModel
 import com.example.smartglass.data.viewmodel.ViewModelPhoto
 import com.example.smartglass.data.viewmodel.VoiceCommandViewModel
 import com.example.smartglass.service.VoiceRecognitionService
+import com.example.smartglass.utlity.ActivityUtils
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.storage.FirebaseStorage
 import io.reactivex.Observable
@@ -106,9 +107,9 @@ class HomeView(private val context: Context, private val appCompatActivity: Comp
         val bitmaps by viewModel.bitmaps.collectAsState()
         val vGeminiModel = GeminiViewModel()
         var geminiViewModel = ViewModelProvider(appCompatActivity)[vGeminiModel.javaClass]
-        val vKeyDownEventModel = KeyDownEventViewModel
+       // val vKeyDownEventModel = KeyDownEventViewModel
         var keyDownEventViewModel =
-            ViewModelProvider(appCompatActivity)[vKeyDownEventModel.javaClass]
+            ViewModelProvider(appCompatActivity)[KeyDownEventViewModel::class.java]
         val scaffoldState = rememberBottomSheetScaffoldState()
         val controller: LifecycleCameraController = remember {
             LifecycleCameraController(context).apply {
@@ -148,8 +149,8 @@ class HomeView(private val context: Context, private val appCompatActivity: Comp
         LaunchedEffect(Unit) {
             startVoiceRecognition()
 
-            val vModel = VoiceCommandViewModel
-            val voiceCommandViewModel = ViewModelProvider(appCompatActivity)[vModel.javaClass]
+           // val vModel = VoiceCommandViewModel
+            val voiceCommandViewModel = ViewModelProvider(appCompatActivity)[VoiceCommandViewModel::class.java]
 
             // Observe the LiveData object for changes
             voiceCommandViewModel.dataLiveData.observe(appCompatActivity) { newData ->
@@ -192,8 +193,8 @@ class HomeView(private val context: Context, private val appCompatActivity: Comp
                 //geminiViewModel.dataLiveData.removeObservers(activity)
 
             }
-            val Model = TakePhotoFirebaseViewModel
-            val takePhotoFirebaseViewModel = ViewModelProvider(appCompatActivity)[Model.javaClass]
+            //val Model = TakePhotoFirebaseViewModel
+            val takePhotoFirebaseViewModel = ViewModelProvider(appCompatActivity)[TakePhotoFirebaseViewModel::class.java]
 
             // Observe the LiveData object for changes
             takePhotoFirebaseViewModel.dataLiveData.observe(appCompatActivity) { newData ->
@@ -321,7 +322,7 @@ class HomeView(private val context: Context, private val appCompatActivity: Comp
         onPhotoTaken: (Bitmap) -> Unit, mode: String, objectFinder: String
     ) {
         var photo: File? = null
-        var fireStorageFile = FireStorageViewModel
+        var fireStorageFile = ViewModelProvider(ActivityUtils.appCompatActivity!!)[FireStorageViewModel::class.java]
         val photoFile = File(
             Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES),
             "${System.currentTimeMillis()}.jpg"

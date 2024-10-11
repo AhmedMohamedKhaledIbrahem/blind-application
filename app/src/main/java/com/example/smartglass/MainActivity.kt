@@ -34,6 +34,7 @@ import androidx.compose.ui.unit.dp
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.hilt.navigation.compose.hiltViewModel
+import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavHostController
@@ -81,7 +82,7 @@ class MainActivity : ComponentActivity() {
     private var tts: TextToSpeech? = null
     private val receiver = NotificationBroadcastReceiver()
 
-    var keyDownEventViewModel = KeyDownEventViewModel
+
 
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -117,18 +118,22 @@ class MainActivity : ComponentActivity() {
             )
         }
 
-        /*networkConnectivityViewModel.observe(this) { isConnected ->
-            if (isConnected) {
-
-            } else {
+        networkConnectivityViewModel.observe(this) { isConnected ->
+            if (!isConnected) {
+                tts?.speak(
+                    "lost connection the emergency plan activated ",
+                    TextToSpeech.QUEUE_FLUSH,
+                    null,
+                )
+            } /*else {
                 tts?.speak(
                     "lost connection the emergency plan activated ",
                     TextToSpeech.QUEUE_FLUSH,
                     null,
                 )
                 shortMessageService.smsEmergencyContact()
-            }
-        }*/
+            }*/
+        }
 
 
         val filter = IntentFilter("ACCEPT_ACTION")
@@ -144,7 +149,7 @@ class MainActivity : ComponentActivity() {
                 val navBackStackEntry by navController.currentBackStackEntryAsState()
                 val currentDestination = navBackStackEntry?.destination?.route
                 Log.e("current",currentDestination.toString())
-                if (state == false) {
+               /* if (state == false) {
                     tts?.speak(
                         "lost connection ",
                         TextToSpeech.QUEUE_FLUSH,
@@ -161,7 +166,7 @@ class MainActivity : ComponentActivity() {
                     }else{
                         shortMessageService.smsEmergencyContact()
                     }
-                } else {
+                } else {}*/
 
                     // Define the navigation graph
                     NavigationControllerLoginViewToSignUpView(
@@ -175,7 +180,7 @@ class MainActivity : ComponentActivity() {
                         forgetPasswordView,
                         passwordChangeView,
                     )
-                }
+
 
             }
 
@@ -416,7 +421,8 @@ class MainActivity : ComponentActivity() {
             // Volume down key pressed
             Log.d("MainActivity", "Volume Down key pressed")
             // Perform your action here
-            KeyDownEventViewModel.updateData("true")
+            var keyDownEventViewModel = ViewModelProvider(this)[KeyDownEventViewModel::class.java]
+            keyDownEventViewModel.updateData("true")
             true
         } else {
             super.onKeyDown(keyCode, event)

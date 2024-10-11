@@ -24,7 +24,7 @@ interface SmartGlassApi {
     companion object {
         operator fun invoke(): SmartGlassApi {
             return Retrofit.Builder()
-                .baseUrl("http://10.0.0.25:5001/")
+                .baseUrl("http://10.0.0.105:5001/")
 
                 .addConverterFactory(GsonConverterFactory.create())
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())

@@ -14,6 +14,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.semantics.contentDescription
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.unit.dp
+import com.example.smartglass.ui.design.CheckUiColorButtonMode
 import com.example.smartglass.ui.design.CheckUiColorMode
 import com.example.smartglass.ui.design.getCustomTextInstance
 
@@ -46,7 +47,7 @@ data class CustomButtonCompose(
 
             ,
             colors = ButtonDefaults.buttonColors(
-                containerColor = CheckUiColorMode(),
+                containerColor = CheckUiColorButtonMode(),
                 contentColor = Color.White
             ),
             shape = RoundedCornerShape(shape.dp),
@@ -74,7 +75,7 @@ data class CustomButtonCompose(
                 .padding(horizontal = horizontalPadding.dp, vertical = verticalPadding.dp)
                 .defaultMinSize(minWidth = minWidth.dp, minHeight = minHeight.dp)
                 .semantics { contentDescription = contentDescriptions  },
-            colors = ButtonDefaults.buttonColors(containerColor = CheckUiColorMode()),
+            colors = ButtonDefaults.buttonColors(containerColor = CheckUiColorButtonMode()),
             shape = RoundedCornerShape(shape.dp),
 
 
